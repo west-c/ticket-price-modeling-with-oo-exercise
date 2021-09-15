@@ -8,14 +8,14 @@ import java.util.List;
  */
 public class DiscountList {
 
-    List<Discount> discounts;
+    private final List<Discount> discounts;
 
     public DiscountList(Discount... discounts) {
         this.discounts = Arrays.asList(discounts);
     }
 
     /**
-     * 割引要素を持っていないかどうか.
+     * 割引要素が空かどうか.
      */
     public boolean isEmpty() {
         return discounts.isEmpty();

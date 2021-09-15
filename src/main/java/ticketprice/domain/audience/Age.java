@@ -15,8 +15,8 @@ public class Age {
         return new Age(age);
     }
 
-    boolean isYearsAndOver(int age) {
-        return this.age >= age;
+    boolean isYearsAndOver(int other) {
+        return this.age >= other;
     }
 
     boolean isInfant() {

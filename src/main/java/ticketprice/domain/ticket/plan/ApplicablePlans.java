@@ -22,22 +22,22 @@ public class ApplicablePlans {
     public static ApplicablePlans of(Audience audience, DiscountList discountList) {
         List<TicketPlan> types = new ArrayList<>();
         for (TicketPlan type : TicketPlan.values()) {
-            addApplicableTicketType(types, type, audience, discountList);
+            addApplicablePlan(types, type, audience, discountList);
         }
         return new ApplicablePlans(types);
     }
 
-    private static void addApplicableTicketType(List<TicketPlan> types, TicketPlan type, Audience audience, DiscountList discountList) {
-        if (!type.isAppliedTo(audience, discountList)) {
+    private static void addApplicablePlan(List<TicketPlan> types, TicketPlan ticketPlan, Audience audience, DiscountList discountList) {
+        if (!ticketPlan.isAppliedTo(audience, discountList)) {
             return;
         }
-        types.add(type);
+        types.add(ticketPlan);
     }
 
     /**
      * 値段の最も安いチケットを算出する.
      */
-    public TicketPlan reasonableTicketType(PriceType priceType) {
+    public TicketPlan reasonablePlan(PriceType priceType) {
         if (plans.isEmpty()) {
             throw new IllegalStateException();
         }

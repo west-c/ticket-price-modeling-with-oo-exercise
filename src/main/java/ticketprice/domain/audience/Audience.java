@@ -13,8 +13,8 @@ public class Audience {
     /**
      * 指定した年齢以上かどうか.
      */
-    public boolean isYearsAndOver(int age) {
-        return this.age.isYearsAndOver(age);
+    public boolean isYearsAndOver(int other) {
+        return age.isYearsAndOver(other);
     }
 
     /**

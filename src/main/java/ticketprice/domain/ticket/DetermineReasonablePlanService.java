@@ -14,6 +14,6 @@ public class DetermineReasonablePlanService {
         ApplicablePlans applicablePlans = ApplicablePlans.of(audience, discountList);
         PriceType priceType = PriceType.of(screenTime);
 
-        return applicablePlans.reasonableTicketType(priceType);
+        return applicablePlans.reasonablePlan(priceType);
     }
 }
